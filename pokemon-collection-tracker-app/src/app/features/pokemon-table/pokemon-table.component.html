@@ -1,11 +1,27 @@
-<div *ngIf="pokemonList">
-  <ul>
-    <li *ngFor="let pokemon of pokemonList">
-      {{ pokemon.name }} (ID: {{ pokemon.id }}) - Caught: {{ pokemon.caught }}
-      <button (click)="toggleCaught(pokemon)">Toggle Caught</button>
-    </li>
-  </ul>
+<div class="row">
+  <div *ngIf="pokemonList">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Caught</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pokemon of pokemonList" [class.table-success]="pokemon.caught">
+          <td>{{ pokemon.id }}</td>
+          <td>{{ pokemon.name | titlecase}}</td>
+          <td>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" [checked]="pokemon.caught" (change)="toggleCaught(pokemon)">
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
-  <button (click)="previousPage()" [disabled]="offset === 0">Precedente</button>
-  <button (click)="nextPage()">Successiva</button>
+    <button (click)="previousPage()" [disabled]="offset === 0" class="btn btn-primary me-2">Precedente</button>
+    <button (click)="nextPage()" class="btn btn-primary">Successiva</button>
+  </div>
 </div>
