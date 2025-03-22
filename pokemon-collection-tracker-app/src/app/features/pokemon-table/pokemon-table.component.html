@@ -1,1 +1,10 @@
-<p>pokemon-table works!</p>
+<div *ngIf="pokemonList">
+  <ul>
+    <li *ngFor="let pokemon of pokemonList">
+      {{ pokemon.name }} (ID: {{ pokemon.id }})
+    </li>
+  </ul>
+
+  <button (click)="previousPage()" [disabled]="offset === 0">Precedente</button>
+  <button (click)="nextPage()">Successiva</button>
+</div>
