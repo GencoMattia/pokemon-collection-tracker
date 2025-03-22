@@ -54,7 +54,8 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "baseHref": "/pokemon-collection-tracker-app/"
             },
             "development": {
               "optimization": false,
