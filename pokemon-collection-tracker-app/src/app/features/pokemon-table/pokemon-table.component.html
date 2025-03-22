@@ -1,7 +1,8 @@
 <div *ngIf="pokemonList">
   <ul>
     <li *ngFor="let pokemon of pokemonList">
-      {{ pokemon.name }} (ID: {{ pokemon.id }})
+      {{ pokemon.name }} (ID: {{ pokemon.id }}) - Caught: {{ pokemon.caught }}
+      <button (click)="toggleCaught(pokemon)">Toggle Caught</button>
     </li>
   </ul>
 
