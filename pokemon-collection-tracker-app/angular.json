@@ -42,7 +42,7 @@
           },
           "configurations": {
             "production": {
-              "baseHref": "/pokemon-collection-tracker/",
+              "baseHref": "/pokemon-collection-tracker-app/",
               "budgets": [
                 {
                   "type": "initial",
